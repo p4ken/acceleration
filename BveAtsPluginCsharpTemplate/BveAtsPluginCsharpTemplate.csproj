@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AtsPlugin</RootNamespace>
-    <AssemblyName>AtsPlugin</AssemblyName>
+    <AssemblyName>Acceleration</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -74,4 +74,7 @@
   <Target Name="DllExportRPkgDynamicImport" BeforeTargets="PostBuildEvent" DependsOnTargets="GetFrameworkPaths" Condition="'$(DllExportModImported)' != 'true' And '$(DllExportRPkgDyn)' != 'false'">
     <MSBuild BuildInParallel="true" UseResultsCache="true" Projects="$(MSBuildProjectFullPath)" Properties="DllExportRPkgDyn=true" Targets="Build" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>copy C:\Users\p4\Documents\BveTs\Scenarios\p4ken\ats\mini\BveAtsPluginCsharpTemplate\bin\Debug\x86\Acceleration.dll C:\Users\p4\Documents\BveTs\Scenarios\p4ken\economy\ats\p4ken</PostBuildEvent>
+  </PropertyGroup>
 </Project>
