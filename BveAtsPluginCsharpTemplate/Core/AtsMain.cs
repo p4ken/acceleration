@@ -288,6 +288,11 @@ namespace AtsPlugin.Core
         [DllExport(CallingConvention.StdCall)]
         public static void SetPower(int handlePosition)
         {
+            if (handlePosition > 4)
+            {
+                userPower = 4;
+                return;
+            }
             userPower = handlePosition;
         }
 
